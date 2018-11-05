@@ -1,5 +1,6 @@
 
-wallets = {'EX001': {'BTC': 1, 'ETH': 0, 'XRP': 15}}
+#wallets = {'EX001': {'BTC': 1, 'ETH': 0, 'XRP': 15}}
+wallets = {}
 
 
 class wallet():
@@ -9,6 +10,10 @@ class wallet():
         self.experiment = experiment
         self.crypto_name = crypto_name
         self.balance = balance
+        if experiment in wallets:
+            wallets[self.experiment].append((self.crypto_name, self.balance))
+        else:
+            wallets[self.experiment] = [(self.crypto_name, self.balance)]
 
     def sell(self, amount):
         self.amount = amount
@@ -20,5 +25,5 @@ class wallet():
 
 
 def balance(experiment):
-    for i in wallets:
+    for experiment in wallets:
         print(wallets[experiment])
