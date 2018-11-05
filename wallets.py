@@ -1,27 +1,19 @@
 
-#wallets = {'EX001': {'BTC': 1, 'ETH': 0, 'XRP': 15}}
+# wallets = {'EX001': [{'BTC': 1}, {'ETH': 0}, {'XRP': 15}]}
 wallets = {}
 
 
 class wallet():
     tradeamount = 0.99    # it cost 1% of amount for every trade
 
-    def __init__(self, experiment, crypto_name, balance):
+    def __init__(self, experiment):    # adding a new experiment or balance
         self.experiment = experiment
-        self.crypto_name = crypto_name
-        self.balance = balance
-        if experiment in wallets:
-            wallets[self.experiment].append((self.crypto_name, self.balance))
-        else:
-            wallets[self.experiment] = [(self.crypto_name, self.balance)]
+        wallets[self.experiment] = []
 
-    def sell(self, amount):
-        self.amount = amount
-        self.balance = self.balance - (amount * tradeamount)
+    def addbalance(self, crypto, amount):
+        wallets[self.experiment].append({crypto: amount})
 
-    def buy(self, amount):
-        self.amount = amount
-        self.balance = self.balance + (amount * tradeamount)
+    def trade(self, )
 
 
 def balance(experiment):

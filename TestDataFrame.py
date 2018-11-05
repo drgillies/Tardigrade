@@ -7,10 +7,12 @@ from wallets import *
 #exp = Htest(15, 'BTC', 'ETH')
 # xp.graph()
 
-wallet('EX001', 'BTC', 5)
-wallet('EX001', 'ETH', 4)
-wallet('EX002', 'ETH', 3)
+ex001 = wallet('ex001')
+ex002 = wallet('ex002')
 
-balance('EX001')
+ex001.addbalance('BTC', 5)
+ex002.addbalance('ETH', 10)
+ex002.addbalance('BTC', 238)
 
+# balance('EX001')
 print(wallets)
