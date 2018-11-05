@@ -1,3 +1,7 @@
+
+wallets = {'EX001': {'BTC': 1, 'ETH': 0, 'XRP': 15}}
+
+
 class wallet():
     tradeamount = 0.99    # it cost 1% of amount for every trade
 

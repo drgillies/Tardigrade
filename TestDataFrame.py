@@ -1,8 +1,10 @@
+from Htests import *
+from wallets import *
+
 exp = Htest(5, 'BTC', 'ETH')
 exp.currenthour()
 
 exp = Htest(15, 'BTC', 'ETH')
 exp.graph()
 
-wallets = {'EX001': {'BTC': 1, 'ETH': 0, 'XRP': 15}}
 balance('EX001')
